@@ -15,7 +15,7 @@
     "dictcc",
     "api"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "cheerio": "^0.20.0",
     "request": "^2.71.0"
