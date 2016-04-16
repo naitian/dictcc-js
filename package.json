@@ -1,0 +1,16 @@
+{
+  "name": "dictcc-js",
+  "version": "1.0.0",
+  "description": "Unofficial dict.cc api.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Naitian Zhou",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "request": "^2.71.0"
+  },
+  "devDependencies": {}
+}
