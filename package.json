@@ -7,6 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Naitian Zhou",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naitian/dictcc-js"
+  },
+  "keywords": [
+    "dictcc",
+    "api"
+  ],
   "license": "ISC",
   "dependencies": {
     "cheerio": "^0.20.0",
