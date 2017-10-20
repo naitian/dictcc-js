@@ -61,10 +61,10 @@ const ENWORDS = {
 
 exports.translate = (from, to, term, callback) => {
   'use strict';
-  if ((from.toUpperCase() in ENWORDS || from.toUpperCase() in DEWORDS) && 
+  if ((from.toUpperCase() in ENWORDS || from.toUpperCase() in DEWORDS) &&
       (to.toUpperCase() in ENWORDS || to.toUpperCase() in DEWORDS)) {
     const options = {
-      url: 'http://' + from + to + '.dict.cc/?s=' + term,
+      url: 'http://' + from + to + '.dict.cc/?s=' + encodeURIComponent(term),
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0'
       }
@@ -72,16 +72,14 @@ exports.translate = (from, to, term, callback) => {
 
     let fromEnOrDe = true;
     let fromTitle, toTitle = '';
-
-    if (!(from.toLowerCase() === 'en' || from.toLowerCase() === 'de')) {
+if (!(from.toLowerCase() === 'en' || from.toLowerCase() === 'de')) {
       fromEnOrDe = false;
     }
 
     if (from.toLowerCase() === 'de') {
       fromTitle = 'Deutsch';
       toTitle = DEWORDS[to.toUpperCase()];
-    }
-    else {
+    } else {
       fromTitle = 'Englisch';
       toTitle = ENWORDS[to.toUpperCase()];
     }
@@ -99,27 +97,26 @@ exports.translate = (from, to, term, callback) => {
         text = text.trim();
         if(i % 2 === 0){
           l1.push(text);
-        } 
+        }
         else {
           l2.push(text);
         }
       });
-      
+
       if (!fromEnOrDe) {
         l1.forEach((element, index) => {
           dict.push({
             from: element,
             to: l2[index]
           });
-        }); 
-      }
-      else {
+        });
+      } else {
         l2.forEach((element, index) => {
           dict.push({
             from: element,
             to: l1[index]
           });
-        }); 
+        });
       }
       callback(dict, null);
     });
@@ -127,5 +124,5 @@ exports.translate = (from, to, term, callback) => {
   } else {
     callback([{from: '', to: ''}], 'Invalid Language Code');
   }
-  
+
 };
