@@ -1,10 +1,10 @@
 # dictcc-js
 An unofficial API for dict.cc
 
-##Installation
+## Installation
 Run `npm install dictcc-js`.
 
-##Documentation
+## Documentation
 Current dictcc-js only has one function, `translate`
 
 `translate` takes 4 arguments: 
@@ -28,7 +28,7 @@ dictcc.translate("en", "de", "term", (res, err) => {
 });
 ```
 
-##Troubleshooting
+## Troubleshooting
 
 Make sure the languages you're translating are supported. Currently supported languages only include:
 - Bulgarian
@@ -59,5 +59,5 @@ Make sure the languages you're translating are supported. Currently supported la
 - Swedish
 - Turkish
 
-##Contributing
+## Contributing
 Feel free to fork this and make a pull request or file an issue.
